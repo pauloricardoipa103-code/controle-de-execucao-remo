@@ -3,7 +3,7 @@ import type { SIResponse } from '../types';
 export const PRELOADED_SIS: SIResponse[] = [
   {
     si: "100234",
-    os: "2024-001",
+    ptp: "2024-001",
     poste: "P-1002",
     tipo_servico: "Troca de Isolador de Ancoragem",
     localidade: "Iporá - GO (Centro)",
@@ -11,7 +11,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "100235",
-    os: "2024-002",
+    ptp: "2024-002",
     poste: "P-1008",
     tipo_servico: "Manutenção Preventiva de Chave Fusível",
     localidade: "Iporá - GO (Zona Rural)",
@@ -19,7 +19,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "200451",
-    os: "2024-015",
+    ptp: "2024-015",
     poste: "P-2041",
     tipo_servico: "Substituição de Cruzeta",
     localidade: "Iporá - GO (Jardim Novo)",
@@ -27,7 +27,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "300678",
-    os: "2024-032",
+    ptp: "2024-032",
     poste: "P-981",
     tipo_servico: "Instalação de Chave Faca",
     localidade: "Iporá - GO (Distrito Industrial)",
@@ -35,7 +35,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "400112",
-    os: "2024-041",
+    ptp: "2024-041",
     poste: "P-321",
     tipo_servico: "Apoio - Limpeza de Faixa / Poda",
     localidade: "Iporá - GO",
@@ -43,7 +43,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "400119",
-    os: "2024-048",
+    ptp: "2024-048",
     poste: "P-455",
     tipo_servico: "Apoio Linha Viva - Transporte Equipamento",
     localidade: "Iporá - GO",
@@ -51,7 +51,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "1018843",
-    os: "1401010",
+    ptp: "1401010",
     poste: "27749368",
     tipo_servico: "POSTE - DESLOCAMENTO/SUBSTITUIÇÃO (PTP)",
     localidade: "ISRAELANDIA - GO (ZONA RURAL - ESTRADA RURAL)",
@@ -65,7 +65,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "1018920",
-    os: "1400960",
+    ptp: "1400960",
     poste: "20629522",
     tipo_servico: "OBRA REDE ZONA LIVRE-IMPLANTAÇÃO POSTE",
     localidade: "ARENOPOLIS - GO (ZONA RURAL - ESTRADA RURAL)",
@@ -79,7 +79,7 @@ export const PRELOADED_SIS: SIResponse[] = [
   },
   {
     si: "1018843",
-    os: "1401010",
+    ptp: "1401010",
     poste: "27749368",
     tipo_servico: "APOIO - POSTE - DESLOCAMENTO/SUBSTITUIÇÃO",
     localidade: "ISRAELANDIA - GO (ZONA RURAL - ESTRADA RURAL)",
