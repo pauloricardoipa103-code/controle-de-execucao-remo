@@ -5,6 +5,24 @@ import { Button } from '../components/ui/Button';
 import { RemoLogo } from '../components/ui/RemoLogo';
 import { supabaseService } from '../services/supabaseService';
 import type { User } from '../services/supabaseService';
+import { EQUIPES } from '../data/users';
+
+// Converter dados locais para formato de User
+function convertEquipesToUsers(): User[] {
+  return EQUIPES.flatMap(equipe =>
+    equipe.usuarios.map(usuario => ({
+      id: `${equipe.codigo}-${usuario.nome}`,
+      nome: usuario.nome,
+      funcao: usuario.funcao,
+      equipe_codigo: equipe.codigo,
+      matricula: equipe.codigo,
+      equipes: {
+        base: equipe.base,
+        tipo: equipe.tipo
+      }
+    }))
+  );
+}
 
 export function Login() {
   const [userId, setUserId] = useState('');
@@ -15,12 +33,20 @@ export function Login() {
   useEffect(() => {
     supabaseService.getEncarregados()
       .then(data => {
-        setUsers(data);
+        if (data && data.length > 0) {
+          setUsers(data);
+        } else {
+          // Fallback para dados locais se banco estiver vazio
+          console.log('Banco vazio, usando dados locais...');
+          setUsers(convertEquipesToUsers());
+        }
         setLoading(false);
       })
       .catch(err => {
-        console.error('Erro ao carregar usuários:', err);
-        alert('ERRO TÉCNICO SUPABASE: ' + (err.message || 'Erro desconhecido'));
+        console.error('Erro ao carregar usuários do Supabase:', err);
+        // Em caso de erro, usar dados locais como fallback
+        console.log('Usando dados locais devido a erro...');
+        setUsers(convertEquipesToUsers());
         setLoading(false);
       });
   }, []);
