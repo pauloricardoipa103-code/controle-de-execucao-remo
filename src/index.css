@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a8a; /* corporate blue approximation */
+  --color-secondary: #10b981; /* corporate green approximation */
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
