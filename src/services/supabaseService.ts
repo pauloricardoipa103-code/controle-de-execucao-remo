@@ -13,16 +13,17 @@ export interface User {
 
 export interface SI {
   si: string;
-  os: string;
+  ptp: string;
   poste: string;
-  tipo_servico: string;
   localidade: string;
   equipe_codigo: string;
+  concluida: boolean;
+  status: string;
   natureza: string;
+  setor_solicitante: string;
   inicio_previsto: string;
   termino_previsto: string;
-  status_ptp: string;
-  setor_solicitante: string;
+  encarregado_nome: string;
 }
 
 export const supabaseService = {
