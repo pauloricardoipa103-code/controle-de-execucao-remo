@@ -28,7 +28,7 @@ export function Home() {
       try {
         setLoading(true);
         // Buscar SIs reais do banco
-        const sis = await supabaseService.getSIsByEquipe(user.equipe || '');
+        const sis = await supabaseService.getSIsByEquipe(user.equipe || '', user.nome);
         setSisPendentes(sis);
         
         // Mantemos localStorage para registros locais em andamento, 
