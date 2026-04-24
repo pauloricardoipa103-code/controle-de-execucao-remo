@@ -24,6 +24,8 @@ export interface SI {
   inicio_previsto: string;
   termino_previsto: string;
   encarregado_nome: string;
+  tipo_servico?: string;
+  status_ptp?: string;
 }
 
 export const supabaseService = {
