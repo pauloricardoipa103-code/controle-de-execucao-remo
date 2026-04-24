@@ -31,7 +31,6 @@ export function Home() {
         const sis = await supabaseService.getSIsByEquipe(user.equipe || '');
         setSisPendentes(sis);
         
-        }
       } catch (err) {
         console.error('Erro ao carregar dados do Supabase:', err);
       } finally {
