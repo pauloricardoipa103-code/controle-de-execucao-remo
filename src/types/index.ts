@@ -18,7 +18,7 @@ export type StatusExecucao = "PENDENTE_FOTO_ANTES" | "EM_EXECUCAO" | "CONCLUIDO"
 export interface ServiceRecord {
   id: string;
   si: string;
-  os: string;
+  ptp: string;
   encarregado: string;
   equipe: string;
   status: StatusExecucao;
@@ -30,7 +30,7 @@ export interface ServiceRecord {
 
 export interface SIResponse {
   si: string;
-  os: string;
+  ptp: string;
   poste: string;
   tipo_servico: string;
   localidade: string;
