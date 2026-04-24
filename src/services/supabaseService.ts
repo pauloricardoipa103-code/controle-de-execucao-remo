@@ -36,13 +36,19 @@ export const supabaseService = {
     return data as User[];
   },
 
-  async getSIsByEquipe(equipeCodigo: string) {
-    const { data, error } = await supabase
+  async getSIsByEquipe(equipe: string, nome?: string) {
+    let query = supabase
       .from('ordens_servico')
       .select('*')
-      .eq('equipe_codigo', equipeCodigo)
       .eq('concluida', false);
-    
+
+    if (nome) {
+      query = query.or(`equipe_codigo.eq."${equipe}",encarregado_nome.eq."${nome}"`);
+    } else {
+      query = query.eq('equipe_codigo', equipe);
+    }
+
+    const { data, error } = await query;
     if (error) throw error;
     return data as SI[];
   },
