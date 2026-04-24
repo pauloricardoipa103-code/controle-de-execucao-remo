@@ -20,6 +20,7 @@ export function Login() {
       })
       .catch(err => {
         console.error('Erro ao carregar usuários:', err);
+        alert('ERRO TÉCNICO SUPABASE: ' + (err.message || 'Erro desconhecido'));
         setLoading(false);
       });
   }, []);
