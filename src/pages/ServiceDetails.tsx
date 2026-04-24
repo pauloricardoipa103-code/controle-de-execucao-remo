@@ -40,12 +40,12 @@ export function ServiceDetails() {
     const newRecord: ServiceRecord = {
       id: crypto.randomUUID(),
       si: data.si,
-      os: data.os,
+      ptp: data.ptp,
       encarregado: currentUser?.nome || 'Desconhecido',
       equipe: data.equipe_codigo,
       status: 'PENDENTE_FOTO_ANTES',
       poste: data.poste,
-      tipo_servico: data.tipo_servico,
+      tipo_servico: data.tipo_servico || 'Não informado',
       localidade: data.localidade,
       fotos: []
     };
@@ -71,8 +71,8 @@ export function ServiceDetails() {
       <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 mb-6 animate-in fade-in slide-in-from-bottom-4">
         <div className="flex items-center justify-between mb-6 pb-6 border-b border-slate-100">
           <div>
-            <p className="text-sm font-medium text-slate-500">Número da OS</p>
-            <p className="text-2xl font-bold text-[#1b365d]">{data.os}</p>
+            <p className="text-sm font-medium text-slate-500">Número do PTP</p>
+            <p className="text-2xl font-bold text-[#1b365d]">{data.ptp}</p>
           </div>
           <div className="bg-blue-50 text-[#1b365d] px-3 py-1.5 rounded-lg text-sm font-bold">
             NOVO SERVIÇO
