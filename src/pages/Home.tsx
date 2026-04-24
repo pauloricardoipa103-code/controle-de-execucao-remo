@@ -31,12 +31,12 @@ export function Home() {
         const sis = await supabaseService.getSIsByEquipe(user.equipe || '');
         setSisPendentes(sis);
         
-        if (sis.length > 0) {
-          console.log('Dados carregados:', sis.length);
-        } else {
-          // Alert discreto para debug
-          console.warn('Banco de dados conectado, mas nenhuma SI encontrada para:', user.equipe);
         }
+      } catch (err) {
+        console.error('Erro ao carregar dados do Supabase:', err);
+      } finally {
+        setLoading(false);
+      }
     };
 
     loadData();
