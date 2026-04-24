@@ -28,18 +28,15 @@ export function Home() {
       try {
         setLoading(true);
         // Buscar SIs reais do banco
-        const sis = await supabaseService.getSIsByEquipe(user.equipe || '', user.nome);
+        const sis = await supabaseService.getSIsByEquipe(user.equipe || '');
         setSisPendentes(sis);
         
-        // Mantemos localStorage para registros locais em andamento, 
-        // mas futuras versões buscarão execuções de fotos pendentes do banco tb
-        const existingRecords = db.getRecords().filter(r => r.equipe === user.equipe);
-        setRecords(existingRecords);
-      } catch (err) {
-        console.error('Erro ao carregar dados do Supabase:', err);
-      } finally {
-        setLoading(false);
-      }
+        if (sis.length > 0) {
+          console.log('Dados carregados:', sis.length);
+        } else {
+          // Alert discreto para debug
+          console.warn('Banco de dados conectado, mas nenhuma SI encontrada para:', user.equipe);
+        }
     };
 
     loadData();
